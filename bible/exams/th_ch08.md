@@ -1,0 +1,6 @@
+**[Jan 2024 (2nd exam), Q2 (4 pts)]** *In the discrete multiperiod market with assets $B,S_1,\dots,S_N$, a self-financing strategy $\vartheta$ satisfies (mark all):* A. $\vartheta_0(t-1)B(t)+\sum_j\vartheta_j(t-1)S_j(t)=V_\vartheta(t)$, $t=1,\dots,T-1$ — B. $\{V_\vartheta(t)\}$ is a $Q$-martingale for any RN probability $Q$ — C. $V_\vartheta(t)=0$, $t=1,\dots,T-1$ — D. $C_\vartheta(t)=0$, $t=1,\dots,T-1$.
+**Answer: A, D** (Definition 100 and its equivalent form). B is false: the **discounted** value $\tilde V_\vartheta=V_\vartheta/B$ is a $Q$-martingale, not $V_\vartheta$. C confuses value and cashflow.
+
+**[Jan 29, 2025, Q2 (4 pts)]** *With discounted prices $\tilde S_j=S_j/B$ and discounted value $\tilde V_\vartheta$, any self-financing strategy satisfies (mark all):* A. $\vartheta_0(t-1)+\sum_j\vartheta_j(t-1)\tilde S_j(t)=\tilde V_\vartheta(t)$, $t=1,\dots,T-1$ — B. $\tilde V_\vartheta(t)=0$ — C. $\vartheta_0(t)+\sum_j\vartheta_j(t)\tilde S_j(t)=\tilde V_\vartheta(t)$, $t=0,\dots,T-1$ — D. $\tilde V_\vartheta(t)=\tilde V_\vartheta(0)$.
+**Answer: A, C.** C is just the definition of value divided by $B(t)$ (true for **any** strategy); A is the self-financing condition (Def. 100) divided by $B(t)$. B and D are false (value is not constant: it changes with prices).
+

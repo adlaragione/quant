@@ -1,0 +1,144 @@
+### [Jan 14, 2022 – 2nd Partial] Exercise 1 (45 pts) — two-period tree, call, chooser, American chooser
+
+**Data.** $t=0,1,2$; tree $f^0_1\to\{f^1_1=\{\omega_1,\omega_2\},\ f^1_2=\{\omega_3,\omega_4\}\}$. Rates $r(0)=2\%$, $r(1)(f^1_1)=4\%$, $r(1)(f^1_2)=3\%$. $S(0)=10$; $S(1)(f^1_1)=13$, $S(1)(f^1_2)=9$; $S(2)=(14.3,\,10.4,\,9.9,\,8.1)$ on $\omega_1..\omega_4$.
+
+1. *(4) Bond:* $B(0)=1$; $B(1)=1.02$ on both nodes; $B(2)(\omega_{1,2})=1.02\cdot1.04=1.0608$; $B(2)(\omega_{3,4})=1.02\cdot1.03=1.0506$.
+2. *(8) RN probabilities.* Root: $10=\frac{13q+9(1-q)}{1.02}$ ⇒ $Q[f^1_1]=0.3$, $Q[f^1_2]=0.7$. Node $f^1_1$: $13=\frac{14.3q+10.4(1-q)}{1.04}$ ⇒ $Q[\omega_1|f^1_1]=0.8$, $Q[\omega_2|f^1_1]=0.2$. Node $f^1_2$: $9=\frac{9.9q+8.1(1-q)}{1.03}$ ⇒ $Q[\omega_3|f^1_2]=0.65$, $Q[\omega_4|f^1_2]=0.35$. Global: $Q=(0.24,\ 0.06,\ 0.455,\ 0.245)$.
+3. *(3) Complete?* **Yes**: unique RN probability (every local system has a unique strictly positive solution) ⇒ NA + complete by the 2nd FTAP.
+4. *(4) Call $K_C=9$:* $c(2)=(5.3,\ 1.4,\ 0.9,\ 0)$.
+5. *(4)* $c(1)(f^1_1)=\frac{5.3\cdot0.8+1.4\cdot0.2}{1.04}=4.3462$; $c(1)(f^1_2)=\frac{0.9\cdot0.65}{1.03}=0.56796$.
+6. *(2)* $c(0)=\frac{4.3462\cdot0.3+0.56796\cdot0.7}{1.02}=1.6681$.
+7. *(4) Chooser $X(2)=\max\{(S(2)-9)^+,(12-S(2))^+\}$:* put payoffs $(0,1.6,2.1,3.9)$ ⇒ $X(2)=(5.3,\ 1.6,\ 2.1,\ 3.9)$.
+8. *(4)* $S_X(1)(f^1_1)=\frac{5.3\cdot0.8+1.6\cdot0.2}{1.04}=4.3846$; $S_X(1)(f^1_2)=\frac{2.1\cdot0.65+3.9\cdot0.35}{1.03}=2.6505$.
+9. *(2)* $S_X(0)=\frac{4.3846\cdot0.3+2.6505\cdot0.7}{1.02}=3.1086$.
+10. *(2) American chooser: exercise at $t=1$ iff immediate payoff $\ge$ continuation value.* Immediate: $f^1_1$: $\max\{(13-9)^+,(12-13)^+\}=4<4.3846$ (continue); $f^1_2$: $\max\{0,(12-9)^+\}=3>2.6505$ (exercise). **Answer B: on $f^1_2$ only.**
+11. *(6) Cashflows:* $X^A(1)(f^1_1)=0$, $X^A(1)(f^1_2)=3$; $X^A(2)=(5.3,\ 1.6,\ 0,\ 0)$.
+12. *(2) Price:* $S_{X^A}(0)=\frac{0.3\cdot0+0.7\cdot3}{1.02}+\frac{5.3\cdot0.24+1.6\cdot0.06}{1.0608}=2.0588+1.2896=$ **3.3484**. (Recursively: $S_{X^A}(1)=(4.3846,\,0)$ ex-dividend, then $\frac{0.3(0+4.3846)+0.7(3+0)}{1.02}=3.3484$.)
+
+*(Exercise 2 of this exam is identical to Exercise 2 of the Jan 14, 2022 General exam — see Chapter 16.)*
+
+### [Jan 16, 2023 – 2nd Partial] Exercise 1 (40 pts) — stochastic rates, interest-rate swap, rate-triggered knock-in call
+
+**Data.** Same tree as usual; $r(0)=4\%$, $r(1)(f^1_1)=8\%$, $r(1)(f^1_2)=2\%$; $S(0)=10$, $S(1)=(11,\ 8)$, $S(2)=(13.2,\ 8.8,\ 9.6,\ 7.2)$.
+
+1. *(4)* $B(0)=1$, $B(1)=1.04$; $B(2)(\omega_{1,2})=1.04\cdot1.08=1.1232$; $B(2)(\omega_{3,4})=1.04\cdot1.02=1.0608$.
+2. *(8)* Root: $10\cdot1.04=11q+8(1-q)$ ⇒ $Q[f^1_1]=0.8$, $Q[f^1_2]=0.2$. $f^1_1$: $11\cdot1.08=13.2q+8.8(1-q)$ ⇒ $Q[\omega_1|f^1_1]=0.7$. $f^1_2$: $8\cdot1.02=9.6q+7.2(1-q)$ ⇒ $Q[\omega_3|f^1_2]=0.4$. Global $Q=(0.56,\ 0.24,\ 0.08,\ 0.12)$.
+3. *(3)* Unique $Q$ ⇒ arbitrage-free and **complete** (2nd FTAP).
+4. *(4) Call $K_C=9$:* $c(2)=(4.2,\ 0,\ 0.6,\ 0)$.
+5. *(4)* $c(1)(f^1_1)=\frac{4.2\cdot0.7}{1.08}=2.7222$; $c(1)(f^1_2)=\frac{0.6\cdot0.4}{1.02}=0.2353$.
+6. *(2)* $c(0)=\frac{0.8\cdot2.7222+0.2\cdot0.2353}{1.04}=2.1393$.
+7. *(4) Swap receiving fixed $\bar r$, paying floating: $X(1)=\bar r-r(0)$, $X(2)=\bar r-r(1)$.* $X(1)=\bar r-0.04$ on both nodes; $X(2)(\omega_{1,2})=\bar r-0.08$, $X(2)(\omega_{3,4})=\bar r-0.02$. **Yes, $X(t)$ is $\mathcal{P}_{t-1}$-measurable**: $X(1)$ is constant (known at 0), $X(2)$ is constant on each cell of $\mathcal{P}_1$ (because $r(t)$ is adapted ⇒ $X(t)$ is predictable).
+8. *(4) Fair swap rate:* $0=\frac{\bar r-0.04}{1.04}+\frac{0.8(\bar r-0.08)}{1.04\cdot1.08}+\frac{0.2(\bar r-0.02)}{1.04\cdot1.02}$ ⇒ **$\bar r=0.053273$** (≈5.33%, a weighted average of $r(0)$ and the expected $r(1)$ with discount-factor weights).
+9. *(7) Knock-in call ($K=9$) activated if $\max\{r(0),r(1)\}\ge\bar r$:* on $f^1_1$: $\max\{0.04,0.08\}=0.08\ge\bar r$ ⇒ active; on $f^1_2$: $\max\{0.04,0.02\}<\bar r$ ⇒ never activated. $c_{KI}(2)=(4.2,\ 0,\ 0,\ 0)$; $c_{KI}(1)=(2.7222,\ 0)$; $c_{KI}(0)=\frac{0.8\cdot2.7222}{1.04}=$ **2.094**.
+
+*(Exercise 2 of this exam is identical to Exercise 2 of the Jan 16, 2023 General exam — see Chapter 16.)*
+
+### [Feb 1, 2023 – General] Exercise 1 (40 pts) — futures vs forward with stochastic rates
+
+**Data.** $r(0)=3\%$, $r(1)(f^1_1)=8\%$, $r(1)(f^1_2)=2\%$; $S(0)=10$; $S(1)=(11.3,\ 9.3)$; $S(2)=(13.56,\ 9.04,\ 11.16,\ 8.37)$.
+
+1. *(4)* $B(1)=1.03$; $B(2)(\omega_{1,2})=1.03\cdot1.08=1.1124$; $B(2)(\omega_{3,4})=1.03\cdot1.02=1.0506$.
+2. *(8)* Root: $10.3=11.3q+9.3(1-q)$ ⇒ $Q[f^1_1]=0.5$. $f^1_1$: $11.3\cdot1.08=12.204=13.56q+9.04(1-q)$ ⇒ $0.7$. $f^1_2$: $9.3\cdot1.02=9.486=11.16q+8.37(1-q)$ ⇒ $0.4$. Global $Q=(0.35,\ 0.15,\ 0.2,\ 0.3)$.
+3. *(3)* Unique $Q$ ⇒ NA and **complete**.
+4. *(4) Call $K_C=9$:* $(4.56,\ 0.04,\ 2.16,\ 0)$.
+5. *(4)* $c(1)(f^1_1)=\frac{4.56\cdot0.7+0.04\cdot0.3}{1.08}=2.9667$; $c(1)(f^1_2)=\frac{2.16\cdot0.4}{1.02}=0.84706$.
+6. *(2)* $c(0)=\frac{0.5(2.9667+0.84706)}{1.03}=1.8513$.
+7. *(4) Futures (marked to market): long position cashflows $X(1)=f(1)-f(0)$, $X(2)=S(2)-f(1)$.* $X(1)(f^1_h)=f(1)(f^1_h)-f(0)$; $X(2)(\omega_{1})=13.56-f(1)(f^1_1)$, $X(2)(\omega_2)=9.04-f(1)(f^1_1)$, $X(2)(\omega_3)=11.16-f(1)(f^1_2)$, $X(2)(\omega_4)=8.37-f(1)(f^1_2)$.
+8. *(4) Zero value at $t=1$ and $t=0$.* At $t=1$: $\mathbb{E}^Q_1\big[\frac{S(2)-f(1)}{1+r(1)}\big]=0$ ⇒ $f(1)=\mathbb{E}^Q_1[S(2)]=S(1)(1+r(1))$: $f(1)(f^1_1)=12.204$, $f(1)(f^1_2)=9.486$. At $t=0$ (tower property, the $t=2$ term has zero value at 1): $\mathbb{E}^Q\big[\frac{f(1)-f(0)}{1+r(0)}\big]=0$ ⇒ $f(0)=\mathbb{E}^Q[f(1)]=0.5\cdot12.204+0.5\cdot9.486=$ **10.845**. **Key fact: futures price $=\mathbb{E}^Q[S(T)\mid\mathcal{P}_t]$ (a $Q$-martingale).**
+9. *(4) Forward:* $0=\mathbb{E}^Q\big[\frac{S(2)-F}{B(2)}\big]=S(0)-F\,P(0,2)$ with ZCB price $P(0,2)=\mathbb{E}^Q[\frac{1}{B(2)}]=\frac{0.5}{1.1124}+\frac{0.5}{1.0506}=0.92540$ ⇒ $F_{for}=\frac{S(0)}{P(0,2)}=$ **10.806**. **Key fact: forward price $=S(0)/P(0,T)\ne$ futures price when rates are stochastic** (here $F_{for}<f(0)$ because rates are high when $S$ is high: positive correlation favours the futures holder).
+10. *(3) Value of the forward at $t=1$:* $V(1)=S(1)-F_{for}P(1,2)=S(1)-\frac{F_{for}}{1+r(1)}$: $f^1_1$: $11.3-\frac{10.806}{1.08}=1.294>0$; $f^1_2$: $9.3-\frac{10.806}{1.02}=-1.294<0$ ⇒ **A: positive on $f^1_1$, negative on $f^1_2$**.
+
+### [Jan 2024 – 1st exam] Exercise 1 (40 pts) — put, knock-in barrier put, super-replication with 90% probability
+
+**Data.** $r(0)=3\%$, $r(1)(f^1_1)=6\%$, $r(1)(f^1_2)=2\%$; $S(0)=10$; $S(1)=(10.9,\ 7.9)$; $S(2)=(12.862,\ 8.502,\ 9.48,\ 7.11)$.
+
+1. *(4)* $B(1)=1.03$; $B(2)(\omega_{1,2})=1.0918$; $B(2)(\omega_{3,4})=1.0506$.
+2. *(8)* Root: $10.3=10.9q+7.9(1-q)$ ⇒ $Q[f^1_1]=0.8$. $f^1_1$: $11.554=12.862q+8.502(1-q)$ ⇒ $0.7$. $f^1_2$: $8.058=9.48q+7.11(1-q)$ ⇒ $0.4$. $Q=(0.56,\ 0.24,\ 0.08,\ 0.12)$.
+3. *(3)* Unique $Q$ ⇒ **complete** (and NA).
+4. *(4) Put $K=9.48$:* $p(2)=(0,\ 0.978,\ 0,\ 2.37)$.
+5. *(4)* $p(1)(f^1_1)=\frac{0.978\cdot0.3}{1.06}=0.27679$; $p(1)(f^1_2)=\frac{2.37\cdot0.6}{1.02}=1.3941$.
+6. *(2)* $p(0)=\frac{0.8\cdot0.27679+0.2\cdot1.3941}{1.03}=0.48568$.
+7. *(2) Running minimum $m(2)=\min_tS(t)$:* $(10,\ 8.502,\ 7.9,\ 7.11)$.
+8. *(2) Knock-in put activated if $m(2)\le b=8$:* active on $\omega_3,\omega_4$ ⇒ $X(2)=(0,\ 0,\ 0,\ 2.37)$.
+9. *(4)* $S_X(1)=(0,\ 1.3941)$; $S_X(0)=\frac{0.2\cdot1.3941}{1.03}=0.27070$.
+10. *(2) Buy-and-hold with cost 0.5:* $\vartheta_0+10x=0.5$ ⇒ $\vartheta_0=0.5-10x$.
+11. *(3) $P=(0.3,0.3,0.3,0.1)$; super-replicate $p(2)$ with 90% $P$-probability* ⇒ super-replicate on $\omega_1,\omega_2,\omega_3$: $V(2)=(0.5-10x)B(2)+xS(2)$:
+   $\omega_1$: $0.5459+1.944x\ge0$ ⇒ $x\ge-0.28081$; $\omega_2$: $0.5459-2.416x\ge0.978$ ⇒ $x\le-0.17885$; $\omega_3$: $0.5253-1.026x\ge0$ ⇒ $x\le0.512$. ⇒ **$x\in[-0.28081,\ -0.17885]$**.
+12. *(2) Minimize expected shortfall $\mathbb{E}^P[(p(2)-V(2))^+]$:* only $\omega_4$ contributes: $V(2)(\omega_4)=0.5253-3.396x$, shortfall $0.1(2.37-0.5253+3.396x)=0.1(1.8447+3.396x)$, increasing in $x$ ⇒ **$x=-0.28081$** (expected shortfall $\approx0.0891$).
+
+### [Jan 2024 – 2nd exam] Exercise 1 (40 pts) — ZCB, forward, put via call + forward + ZCB
+
+**Data.** $r(0)=3\%$, $r(1)(f^1_1)=10\%$, $r(1)(f^1_2)=3\%$; $S(0)=10$; $S(1)=(11.3,\ 9.3)$; $S(2)=(16.95,\ 7.91,\ 11.16,\ 7.998)$.
+
+1. *(4)* $B(1)=1.03$; $B(2)(\omega_{1,2})=1.133$; $B(2)(\omega_{3,4})=1.0609$.
+2. *(8)* Root: $10.3=11.3q+9.3(1-q)$ ⇒ $0.5$. $f^1_1$: $12.43=16.95q+7.91(1-q)$ ⇒ $0.5$. $f^1_2$: $9.579=11.16q+7.998(1-q)$ ⇒ $0.5$. $Q=(0.25,0.25,0.25,0.25)$.
+3. *(3)* Unique ⇒ complete.
+4. *(4) Call $K=10$:* $c(2)=(6.95,\ 0,\ 1.16,\ 0)$.
+5. *(4)* $c(1)=(\frac{6.95\cdot0.5}{1.1},\ \frac{1.16\cdot0.5}{1.03})=(3.1591,\ 0.56311)$.
+6. *(2)* $c(0)=\frac{0.5(3.1591+0.56311)}{1.03}=1.8069$.
+7. *(3) ZCB:* $ZCB(0)=\mathbb{E}^Q[1/B(2)]=0.5\cdot\frac{1}{1.133}+0.5\cdot\frac1{1.0609}=0.9126$. (Note: $\ne1/\mathbb{E}^Q[B(2)]=0.91158$ — Jensen.)
+8. *(4) Forward:* $0=S(0)-F_0\,ZCB(0)$ ⇒ $F_0=\frac{10}{0.9126}=$ **10.958**. (Not $S(0)\mathbb{E}^Q[B(2)]=10.970$!)
+9. *(4) Replicate the put ($K=10$) with: short 1 forward, $x$ calls, $y$ ZCBs:* $-(S(2)-F_0)+x(S(2)-10)^++y=(10-S(2))^+$ for all $\omega$. Using $(10-S)^+=(S-10)^+-(S-10)$ ⇒ **$x=1$**, $y=10-F_0=$ **$-0.958$**.
+10. *(4)* $p(0)=c(0)-0+y\,ZCB(0)=1.8069-0.958\cdot0.9126=$ **0.932** (= put–call parity $c-S(0)+K\,ZCB(0)$). Check by backward induction: $p(1)=(\frac{0.5\cdot2.09}{1.1},\frac{0.5\cdot2.002}{1.03})=(0.95,\ 0.97184)$, $p(0)=\frac{0.5(0.95+0.97184)}{1.03}=0.932$ ✓.
+
+### [Jan 13, 2025] Exercise 1 (40 pts) — put, cliquet put, "on-average" replication
+
+**Data.** $r(0)=8\%$, $r(1)(f^1_1)=6\%$, $r(1)(f^1_2)=2\%$; $S(0)=10$; $S(1)=(12,\ 9)$; $S(2)=(14.16,\ 9.36,\ 10.8,\ 8.1)$.
+
+1. *(4)* $B(1)=1.08$; $B(2)(\omega_{1,2})=1.1448$; $B(2)(\omega_{3,4})=1.1016$.
+2. *(8)* Root: $10.8=12q+9(1-q)$ ⇒ $0.6$. $f^1_1$: $12.72=14.16q+9.36(1-q)$ ⇒ $0.7$. $f^1_2$: $9.18=10.8q+8.1(1-q)$ ⇒ $0.4$. $Q=(0.42,\ 0.18,\ 0.16,\ 0.24)$.
+3. *(3)* Unique ⇒ complete.
+4. *(2) Put $K=10.8$:* $p(2)=(0,\ 1.44,\ 0,\ 2.7)$.
+5. *(4)* $p(1)=(\frac{1.44\cdot0.3}{1.06},\ \frac{2.7\cdot0.6}{1.02})=(0.40755,\ 1.5882)$.
+6. *(2)* $p(0)=\frac{0.6\cdot0.40755+0.4\cdot1.5882}{1.08}=0.81464$.
+7. *(6) Cliquet put: $X(1)=(S(0)-S(1))^+$, $X(2)=(S(1)-S(2))^+$ (two one-period ATM puts, the second struck at $S(1)$):* $X(1)=(0,\ 1)$; $X(2)=(0,\ 2.64,\ 0,\ 0.9)$.
+8. *(5)* $S_X(1)$ (ex-cashflow): $(\frac{2.64\cdot0.3}{1.06},\ \frac{0.9\cdot0.6}{1.02})=(0.74717,\ 0.52941)$; $S_X(0)=\frac{0.6(0.74717+0)+0.4(0.52941+1)}{1.08}=$ **0.98154** (remember to add the intermediate cashflow $X(1)$!).
+9. *(3) $P$ uniform; buy-and-hold with $\mathbb{E}^P[V(2)]=\mathbb{E}^P[p(2)]$:* $\mathbb{E}^P[p(2)]=1.035$, $\mathbb{E}^P[B(2)]=1.1232$, $\mathbb{E}^P[S(2)]=10.605$ ⇒ $1.1232\vartheta_0+10.605x=1.035$ ⇒ $\vartheta_0=0.92147-9.4418x$.
+10. *(3) Cost $=p(0)$:* $0.92147-9.4418x+10x=0.81465$ ⇒ $x=\vartheta_1=-0.19137$, $\vartheta_0=2.7283$.
+
+### [Jan 29, 2025] Exercise 1 (40 pts) — put and futures (marking to market)
+
+**Data.** $r(0)=5\%$, $r(1)(f^1_1)=10\%$, $r(1)(f^1_2)=2\%$; $S(0)=1$; $S(1)=(1.2,\ 0.9)$; $S(2)=(1.8,\ 0.84,\ 1.08,\ 0.81)$.
+
+1. *(4)* $B(1)=1.05$; $B(2)(\omega_{1,2})=1.155$; $B(2)(\omega_{3,4})=1.071$.
+2. *(8)* Root: $1.05=1.2q+0.9(1-q)$ ⇒ $Q[f^1_1]=0.5$. $f^1_1$: $1.32=1.8q+0.84(1-q)$ ⇒ $Q[\omega_1|f^1_1]=0.5$. $f^1_2$: $0.918=1.08q+0.81(1-q)$ ⇒ $Q[\omega_3|f^1_2]=0.4$. $Q=(0.25,\ 0.25,\ 0.2,\ 0.3)$.
+3. *(3)* Unique ⇒ complete.
+4. *(4) Put $K=1.8$:* $p(2)=(0,\ 0.96,\ 0.72,\ 0.99)$.
+5. *(6)* $p(1)(f^1_1)=\frac{0.5\cdot0.96}{1.1}=0.43636$; $p(1)(f^1_2)=\frac{0.4\cdot0.72+0.6\cdot0.99}{1.02}=0.86471$; $p(0)=\frac{0.5(0.43636+0.86471)}{1.05}=0.61956$.
+6. *(12) Futures:* $X(2)=S(2)-\varphi(1)$: $(1.8-\varphi(1)(f^1_1),\ 0.84-\varphi(1)(f^1_1),\ 1.08-\varphi(1)(f^1_2),\ 0.81-\varphi(1)(f^1_2))$.
+   $S_{X}(1)=\frac{\mathbb{E}^Q_1[S(2)]-\varphi(1)}{1+r(1)}$: $f^1_1$: $\frac{1.32-\varphi(1)}{1.1}$; $f^1_2$: $\frac{0.918-\varphi(1)}{1.02}$. Zero ⇒ $\varphi(1)(f^1_1)=1.32$, $\varphi(1)(f^1_2)=0.918$.
+   $X(1)=\varphi(1)-\varphi(0)$: $(1.32-\varphi(0),\ 0.918-\varphi(0))$. $S_X(0)=\frac{\mathbb{E}^Q[\varphi(1)]-\varphi(0)}{1.05}$ (the $t=1$ ex-cashflow value is 0) ⇒ $\varphi(0)=0.5\cdot1.32+0.5\cdot0.918=$ **1.119**.
+7. *(3) Negative cashflows:* $X(2)=(0.48,\ -0.48,\ 0.162,\ -0.108)$ ⇒ negative on $\omega_2,\omega_4$; $X(1)=(0.201,\ -0.201)$ ⇒ negative on $f^1_2$.
+
+### [Dec 19, 2025] Exercise 1 (40 pts) — put, range-accrual coupons, ZCB, call via put–call parity
+
+**Data.** $r(0)=6\%$, $r(1)(f^1_1)=8\%$, $r(1)(f^1_2)=2\%$; $S(0)=10$; $S(1)=(11.8,\ 7.8)$; $S(2)=(14.16,\ 9.44,\ 9.36,\ 7.02)$.
+
+1. *(4)* $B(1)=1.06$; $B(2)(\omega_{1,2})=1.1448$; $B(2)(\omega_{3,4})=1.0812$.
+2. *(8)* Root: $10.6=11.8q+7.8(1-q)$ ⇒ $0.7$. $f^1_1$: $12.744=14.16q+9.44(1-q)$ ⇒ $0.7$. $f^1_2$: $7.956=9.36q+7.02(1-q)$ ⇒ $0.4$. $Q=(0.49,\ 0.21,\ 0.12,\ 0.18)$.
+3. *(3)* Unique ⇒ complete.
+4. *(2) Put $K=10.44$:* $p(2)=(0,\ 1,\ 1.08,\ 3.42)$.
+5. *(4)* $p(1)=(\frac{0.3\cdot1}{1.08},\ \frac{0.4\cdot1.08+0.6\cdot3.42}{1.02})=(0.27778,\ 2.4353)$.
+6. *(3)* $p(0)=\frac{0.7\cdot0.27778+0.3\cdot2.4353}{1.06}=0.87268$.
+7. *(4) Coupon $C=10$ at $t=1,2$ if $0.8\le\frac{S(t)}{S(t-1)}\le1.2$:* $t=1$: $f^1_1$: $1.18$ ⇒ 10; $f^1_2$: $0.78$ ⇒ 0. $t=2$: ratios $1.2,\ 0.8,\ 1.2,\ 0.9$ ⇒ all pay 10 (boundaries included!). $X(2)=(10,10,10,10)$.
+8. *(5)* $S_X(1)=(\frac{10}{1.08},\ \frac{10}{1.02})=(9.2593,\ 9.8039)$; $S_X(0)=\frac{0.7(9.2593+10)+0.3(9.8039+0)}{1.06}=$ **15.493**.
+9. *(2)* $ZCB(0)=\frac{0.7}{1.1448}+\frac{0.3}{1.0812}=0.88893$.
+10. *(5) Call $K=10.44$ by buy-and-hold:* $(S-K)^+=S-K+(K-S)^+$ ⇒ $\vartheta_0=0$, $\vartheta_1=1$, $\vartheta_{put}=1$, $\vartheta_{ZCB}=-K=-10.44$ (buy-and-hold ⇒ self-financing). $c(0)=10+0.87268-10.44\cdot0.88893=$ **1.592** (check: $c(2)=(3.72,0,0,0)$, $\frac{0.49\cdot3.72}{1.1448}=1.592$ ✓).
+
+### [Jan 2026] Exercise 1 (40 pts) — put, knock-out Asian put, super-replication in 3 of 4 scenarios
+
+**Data.** $r(0)=8\%$, $r(1)(f^1_1)=8\%$, $r(1)(f^1_2)=5\%$; $S(0)=10$; $S(1)=(12,\ 8)$; $S(2)=(14.4,\ 9.6,\ 9.6,\ 7.2)$.
+
+1. *(4)* $B(1)=1.08$; $B(2)(\omega_{1,2})=1.08^2=1.1664$; $B(2)(\omega_{3,4})=1.08\cdot1.05=1.134$.
+2. *(8)* Root: $10.8=12q+8(1-q)$ ⇒ $Q[f^1_1]=0.7$, $Q[f^1_2]=0.3$. $f^1_1$: $12.96=14.4q+9.6(1-q)$ ⇒ $0.7/0.3$. $f^1_2$: $8.4=9.6q+7.2(1-q)$ ⇒ $0.5/0.5$. $Q=(0.49,\ 0.21,\ 0.15,\ 0.15)$.
+3. *(3)* Unique strictly positive $Q$ ⇒ arbitrage-free (1st FTAP) and complete (2nd FTAP).
+4. *(2) Put $K=10.6$:* $p(2)=(0,\ 1,\ 1,\ 3.4)$.
+5. *(4)* $p(1)(f^1_1)=\frac{0.3}{1.08}=0.27778$; $p(1)(f^1_2)=\frac{0.5\cdot1+0.5\cdot3.4}{1.05}=2.0952$.
+6. *(3)* $p(0)=\frac{0.7\cdot0.27778+0.3\cdot2.0952}{1.08}=0.76204$.
+7. *(4) Knock-out Asian put: pays $(K-A(T))^+$, $A(T)=\frac13\sum_{t=0}^2S(t)$, $K=10.6$, if $\max_tS(t)<b=11$:* running max $=(14.4,\ 12,\ 10,\ 10)$ ⇒ knocked out on $\omega_1,\omega_2$. $A(\omega_3)=\frac{10+8+9.6}3=9.2$, $A(\omega_4)=\frac{10+8+7.2}{3}=8.4$ ⇒ $X(2)=(0,\ 0,\ 1.4,\ 2.2)$.
+8. *(5)* $S_X(1)=(0,\ \frac{0.5(1.4+2.2)}{1.05})=(0,\ 1.7143)$; $S_X(0)=\frac{0.3\cdot1.7143}{1.08}=$ **0.47619**.
+9. *(2) Buy-and-hold with cost 0.762:* $\vartheta_0+10x=0.762$ ⇒ $\vartheta_0=0.762-10x$.
+10. *(5) Super-replicate $p(2)$ in exactly three scenarios:* $V(2)-p(2)=(0.762-10x)B(2)+xS(2)-p(2)\ge0$:
+    $\omega_1$: $2.736x+0.8888\ge0$ ⇒ $x\ge-0.325$; $\omega_2$: $-2.064x-0.1112\ge0$ ⇒ $x\le-0.054$; $\omega_3$: $-1.74x-0.1359\ge0$ ⇒ $x\le-0.078$; $\omega_4$: $-4.14x-2.5359\ge0$ ⇒ $x\le-0.6125$.
+    ⇒ on $\{\omega_1,\omega_2,\omega_3\}$: **$-0.325\le x\le-0.078$**; on $\{\omega_2,\omega_3,\omega_4\}$: **$x\le-0.6125$** (the official sheet prints $-0.628$; recomputing $2.2362/3.6508$ gives $0.6125$). No other triple is feasible ($\omega_1$ and $\omega_4$ are incompatible). Why not all four? The cost $0.762\approx p(0)$ is the price of the put; a portfolio with that cost that dominates $p(2)$ everywhere would be an exact replication (otherwise it would be an arbitrage), but the put can only be replicated **dynamically** (rebalancing at $t=1$), not by a buy-and-hold.
+

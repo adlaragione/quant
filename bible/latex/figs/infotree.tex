@@ -1,0 +1,10 @@
+\begin{tikzpicture}[grow=right,level 1/.style={level distance=3cm,sibling distance=3.2cm},level 2/.style={level distance=3.2cm,sibling distance=1.5cm},level 3/.style={level distance=2.6cm,sibling distance=0.7cm},every node/.style={font=\scriptsize}]
+\node{$\Omega$}
+ child{node{$\{\omega_4,\dots,\omega_7\}$}
+   child{node{$\{\omega_6,\omega_7\}$} child{node{$\{\omega_7\}$}} child{node{$\{\omega_6\}$}}}
+   child{node{$\{\omega_4,\omega_5\}$} child{node{$\{\omega_5\}$}} child{node{$\{\omega_4\}$}}}}
+ child{node{$\{\omega_1,\omega_2,\omega_3\}$}
+   child{node{$\{\omega_3\}$} child{node{$\{\omega_3\}$}}}
+   child{node{$\{\omega_1,\omega_2\}$} child{node{$\{\omega_2\}$}} child{node{$\{\omega_1\}$}}}};
+\foreach \x/\l in {0/{t=0},3/{t=1},6.2/{t=2},8.8/{t=3}} \node[font=\small] at (\x,-3.3) {$\l$};
+\end{tikzpicture}

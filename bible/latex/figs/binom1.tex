@@ -1,0 +1,8 @@
+\begin{tikzpicture}[grow=right,level distance=2.6cm,sibling distance=1.4cm,every node/.style={font=\small}]
+\node{$1$} child{node{$1+r$} edge from parent node[below,font=\scriptsize]{$\omega_2$}} child{node{$1+r$} edge from parent node[above,font=\scriptsize]{$\omega_1$}};
+\node[below=1.2cm] at (1.3,-0.6){Risk-free asset $B$};
+\begin{scope}[xshift=6.5cm]
+\node{$S$} child{node{$dS$} edge from parent node[below,font=\scriptsize]{$\omega_2$, prob.\ $q_d$}} child{node{$uS$} edge from parent node[above,font=\scriptsize]{$\omega_1$, prob.\ $q_u$}};
+\node[below=1.2cm] at (1.3,-0.6){Risky asset $S$};
+\end{scope}
+\end{tikzpicture}

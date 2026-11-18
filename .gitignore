@@ -1,0 +1,6 @@
+bible/latex/build/
+bible/latex/*.aux
+bible/latex/*.log
+bible/latex/*.out
+bible/latex/*.toc
+bible/latex/QuantBible.pdf
