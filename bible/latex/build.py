@@ -18,7 +18,6 @@ INSERT_AFTER = {
              ("  - Second moment:", FIG("step_beta", "$\\mathbb{E}[(X(T)-X(0))^2]=\\int_0^T\\mathbb{E}[\\beta^2(t)]\\,dt$ is the area below the step function (slides, Ch.~14)."))],
     "ch15": [("- Black–Scholes ⟺ i.i.d. normal", FIG("gbm_paths", "Simulated GBM paths ($S_0=1$, $\\mu=9\\%$, $\\sigma=25\\%$): mean $S_0e^{\\mu t}$ vs median $S_0e^{(\\mu-\\sigma^2/2)t}$."))],
     "ch16": [("**Interpretation:** $N(d_2)", FIG("callprice", "Black--Scholes call price as a function of $S$ for different residual maturities ($K=100$, $r=5\\%$, $\\sigma=20\\%$); it converges to the payoff as $\\tau\\to0$."))],
-    "ch03_04": [("8–9. *(2+2) Super-replicating strategy with maximum", FIG("superrep", "Jan 14, 2022 – Exercise 1: super-replication region (above the green envelope) and the minimum-cost super-replicating portfolio."))],
 }
 # code blocks replaced by TikZ trees
 CODE_REPLACE = {
@@ -89,6 +88,8 @@ def postprocess(tex):
                 title = m.group(1)
                 body = body[:m.start()] + body[m.end():]
                 out.append("\\begin{exambox}{%s}" % title + body + "\\end{exambox}")
+            elif "\\textbf{Solution" in body[:200]:
+                out.append("\\begin{solbox}" + body + "\\end{solbox}")
             else:
                 out.append("\\begin{infobox}" + body + "\\end{infobox}")
             i += 3
