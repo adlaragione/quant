@@ -45,7 +45,7 @@ def preprocess(name, md):
             print("WARNING anchor not found:", name, anchor, file=sys.stderr)
         md = "\n".join(lines)
     # exam boxes: "> ### ★ EXAM — title" -> bold title line inside the quote
-    md = re.sub(r"^> ### ★ EXAM — (.*)$", r"> **EXAMBOX \1**", md, flags=re.M)
+    md = re.sub(r"^> ### ★ EXAM — (.*)$", lambda m: "> **EXAMBOX %s**" % m.group(1).replace("**", ""), md, flags=re.M)
     md = md.replace("★ EXAM", "EXAM")
     md = re.sub(r"^(\s+)> \*Note:\*", r"\1**Note on the official solution:**", md, flags=re.M)
     # "8–9. text" (combined points) -> "8. text" + "9. (see Point 8)" so list numbering stays right
@@ -108,7 +108,7 @@ def md2tex(name):
     md = preprocess(name, md)
     tmp = os.path.join(HERE, "build", name + ".pre.md")
     open(tmp, "w", encoding="utf-8").write(md)
-    res = subprocess.run(["pandoc", tmp, "-f", "markdown-yaml_metadata_block+tex_math_dollars+raw_tex+pipe_tables",
+    res = subprocess.run(["pandoc", tmp, "-f", "markdown-yaml_metadata_block-multiline_tables-simple_tables-grid_tables+tex_math_dollars+raw_tex+pipe_tables",
                           "-t", "latex", "--top-level-division=chapter", "--wrap=preserve"],
                          capture_output=True, text=True)
     if res.returncode:

@@ -1,4 +1,4 @@
-**[Jan 14, 2022 – General, Q4 (4 pts)]** *Let $N(a,b^2)$ be normal with mean $a$, variance $b^2$. In the BS model, under $P$, the log-price $\ln\frac{S(t)}{S(0)}$ is distributed as (only one):*
+**[Jan 14, 2022 – General, Q4 (4 pts)]; [Jan 14, 2022 – 2nd Partial, Q4]** *Let $N(a,b^2)$ be normal with mean $a$, variance $b^2$. In the BS model, under $P$, the log-price $\ln\frac{S(t)}{S(0)}$ is distributed as (only one):*
 - A. $N(\mu t,\sigma^2t)$ — B. $N\big((\mu-\frac{\sigma^2}{2})t,\sigma^2t\big)$ — C. $N\big((r-\frac{\sigma^2}{2})t,\sigma^2t\big)$ — D. $N\big((\mu+\frac{\sigma^2}{2})t,\sigma^2t\big)$
 
 **Answer: B.** From Prop. 158: $\ln\frac{S(t)}{S_0}=(\mu-\frac12\sigma^2)t+\sigma W^P(t)$, $W^P(t)\sim N(0,t)$. (C would be the distribution under $Q$.)

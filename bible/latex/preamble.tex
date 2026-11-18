@@ -19,6 +19,15 @@
 \usepackage{caption}
 \usepackage[hidelinks,bookmarksnumbered]{hyperref}
 \usepackage{pifont}
+\usepackage{multicol}
+\usepackage{tocloft}
+\renewcommand{\cftchapfont}{\bfseries\small}\renewcommand{\cftchappagefont}{\bfseries\small}
+\renewcommand{\cftsecfont}{\scriptsize}\renewcommand{\cftsecpagefont}{\scriptsize}
+\setlength{\cftbeforechapskip}{3pt}\setlength{\cftbeforesecskip}{0pt}
+\setlength{\cftsecindent}{0.8em}\setlength{\cftsecnumwidth}{0pt}\setlength{\cftchapnumwidth}{0pt}
+\renewcommand{\cftsecleader}{\cftdotfill{6}}\renewcommand{\cftchapleader}{\cftdotfill{6}}
+\renewcommand{\cfttoctitlefont}{\Large\bfseries\color{chapcol}}
+\setlength{\cftaftertoctitleskip}{6pt}
 \renewcommand{\checkmark}{\ding{51}}
 
 % pandoc helpers
@@ -75,7 +84,9 @@ and a final formula sheet.}\\[2cm]
 \vfill
 {\small Reference textbook: [BOR26] Battauz, A., F. Ortu and F. Rotondi (2026), \emph{Arbitrage Theory in Discrete and Continuous Time}.}
 \end{titlepage}
+\begin{multicols}{2}
 \tableofcontents
+\end{multicols}
 \clearpage
 \markboth{How to Use This Bible}{}
 %%BODY%%
